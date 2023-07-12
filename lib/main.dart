@@ -50,6 +50,11 @@ class TeamShot extends StatelessWidget {
         "imgUrl":
             "https://user-images.githubusercontent.com/139304692/252948536-812f74de-8632-45db-84b8-e183cc14baf5.jpg",
       },
+      {
+        "test": "이현서",
+        "imgUrl":
+            "https://user-images.githubusercontent.com/94061061/252844435-39e9bd05-f69a-4cc1-8ba9-0f8c49f61a97.png",
+      },
     ];
 
     return Scaffold(
@@ -66,7 +71,19 @@ class TeamShot extends StatelessWidget {
         ),
         actions: [
           IconButton(
+<<<<<<< HEAD
             onPressed: () {},
+=======
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => Subpage(
+                          imgUrl: 'category',
+                        )),
+              );
+            },
+>>>>>>> f2b023b1c78a6dccef22cfd6cebec8f0798a9f2f
             icon: Icon(Icons.add),
           ),
         ],
@@ -101,8 +118,14 @@ class TeamShot extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
+<<<<<<< HEAD
                                 builder: (_) =>
                                     Subpage(imgUrl: imgUrl, a: index)),
+=======
+                                builder: (_) => Subpage(
+                                      imgUrl: imgUrl,
+                                    )),
+>>>>>>> f2b023b1c78a6dccef22cfd6cebec8f0798a9f2f
                           );
                         },
                         style: TextButton.styleFrom(
