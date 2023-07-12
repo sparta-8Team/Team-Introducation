@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:team_introduction/Subpage.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,14 +36,19 @@ class TeamShot extends StatelessWidget {
             "https://github.com/sparta-8Team/Team-Introducation/assets/94061061/ea96d517-36ac-4e26-8f73-24ee3b8a3450",
       },
       {
-        "test": "이성진님 이슈에 사진 다시올려주시면 감사하겠습니다.",
+        "test": "이성진",
         "imgUrl":
             "https://github.com/sparta-8Team/Team-Introducation/assets/94061061/97e79ad3-d971-4a14-9827-f39cde82df66",
       },
       {
-        "test": "이동규님 이슈에 사진 다시올려주시면 감사하겠습니다.",
+        "test": "이동규",
         "imgUrl":
             "https://github-production-user-asset-6210df.s3.amazonaws.com/94061061/252827449-357c96cf-3fe5-40e7-8986-47ab5a94ecad.png",
+      },
+      {
+        "test": "이현서",
+        "imgUrl":
+            "https://user-images.githubusercontent.com/94061061/252844435-39e9bd05-f69a-4cc1-8ba9-0f8c49f61a97.png",
       },
     ];
 
@@ -63,7 +69,10 @@ class TeamShot extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => Subpage()),
+                MaterialPageRoute(
+                    builder: (_) => Subpage(
+                          imgUrl: 'category',
+                        )),
               );
             },
             icon: Icon(Icons.add),
@@ -94,11 +103,28 @@ class TeamShot extends StatelessWidget {
                         height: 200,
                         color: Colors.black.withOpacity(0.5),
                       ),
-                      Text(
-                        category,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 36,
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => Subpage(
+                                      imgUrl: imgUrl,
+                                    )),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size.zero,
+                          alignment: Alignment.center,
+                          backgroundColor: Colors.transparent,
+                        ),
+                        child: Text(
+                          category,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 36,
+                          ),
                         ),
                       ),
                     ],
