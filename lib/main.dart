@@ -38,7 +38,7 @@ class TeamShot extends StatelessWidget {
       {
         "test": "이성진",
         "imgUrl":
-            "https://github.com/sparta-8Team/Team-Introducation/assets/94061061/97e79ad3-d971-4a14-9827-f39cde82df66",
+            "https://user-images.githubusercontent.com/139090280/252877245-ef2a9529-e2bd-487d-9864-cae8b733311d.jpg",
       },
       {
         "test": "이동규",
@@ -90,18 +90,19 @@ class TeamShot extends StatelessWidget {
                 String imgUrl = dataList[index]['imgUrl'];
                 return Card(
                   child: Stack(
-                    alignment: Alignment.center,
+                    alignment: Alignment.bottomCenter,
                     children: [
                       Image.network(
                         imgUrl,
-                        width: double.infinity,
+                        width: 200,
                         height: 200,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fitWidth,
                       ),
                       Container(
                         width: double.infinity,
                         height: 200,
-                        color: Colors.black.withOpacity(0.5),
+                        color: const Color.fromARGB(255, 130, 28, 28)
+                            .withOpacity(0.2),
                       ),
                       TextButton(
                         onPressed: () {
@@ -123,7 +124,7 @@ class TeamShot extends StatelessWidget {
                           category,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 36,
+                            fontSize: 20,
                           ),
                         ),
                       ),

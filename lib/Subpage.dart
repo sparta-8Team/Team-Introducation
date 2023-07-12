@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:team_introduction/main.dart';
 
 class Subpage extends StatelessWidget {
   final String imgUrl;
