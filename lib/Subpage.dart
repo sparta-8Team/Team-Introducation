@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:team_introduction/main.dart';
 
 class Subpage extends StatelessWidget {
-  const Subpage({Key? key}) : super(key: key);
+  final String imgUrl;
+  const Subpage({Key? key, required this.imgUrl}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class Subpage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(
                   bottom: 20, left: 125, right: 125, top: 20),
-              child: Image.network("https://i.ibb.co/4JYHHtc/Moonfall.jpg"),
+              child: Image.network(imgUrl),
             ),
             TextField(
                 decoration: (InputDecoration(
