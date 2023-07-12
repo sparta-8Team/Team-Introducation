@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team_introduction/Subpage.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +22,7 @@ class TeamShot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 테스트 이미지 데이터
+// 테스트 이미지 데이터
     List<Map<String, dynamic>> dataList = [
       {
         "test": "test1",
@@ -43,7 +44,12 @@ class TeamShot extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => Subpage()),
+              );
+            },
             icon: Icon(Icons.add),
           )
         ],
