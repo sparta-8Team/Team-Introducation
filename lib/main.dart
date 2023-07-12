@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-=======
 import 'package:team_introduction/Subpage.dart';
->>>>>>> f68667981a0a52173e50315b031c91046fe4c7ea
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,10 +13,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-<<<<<<< HEAD
-      home: Scaffold(
-        appBar: AppBar(),
-=======
       home: TeamShot(),
     );
   }
@@ -42,14 +36,19 @@ class TeamShot extends StatelessWidget {
             "https://github.com/sparta-8Team/Team-Introducation/assets/94061061/ea96d517-36ac-4e26-8f73-24ee3b8a3450",
       },
       {
-        "test": "이성진님 이슈에 사진 다시올려주시면 감사하겠습니다.",
+        "test": "이성진",
         "imgUrl":
-            "https://github.com/sparta-8Team/Team-Introducation/assets/94061061/97e79ad3-d971-4a14-9827-f39cde82df66",
+            "https://user-images.githubusercontent.com/139090280/252877245-ef2a9529-e2bd-487d-9864-cae8b733311d.jpg",
       },
       {
-        "test": "이동규님 이슈에 사진 다시올려주시면 감사하겠습니다.",
+        "test": "이동규",
         "imgUrl":
-            "https://github-production-user-asset-6210df.s3.amazonaws.com/94061061/252827449-357c96cf-3fe5-40e7-8986-47ab5a94ecad.png",
+            "https://user-images.githubusercontent.com/138475088/252939731-133b56fd-8e24-4c1c-9d17-8e3e64494d2f.jpg",
+      },
+      {
+        "test": "이현서",
+        "imgUrl":
+            "https://user-images.githubusercontent.com/139304692/252948536-812f74de-8632-45db-84b8-e183cc14baf5.jpg",
       },
     ];
 
@@ -67,12 +66,7 @@ class TeamShot extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => Subpage()),
-              );
-            },
+            onPressed: () {},
             icon: Icon(Icons.add),
           ),
         ],
@@ -88,24 +82,41 @@ class TeamShot extends StatelessWidget {
                 String imgUrl = dataList[index]['imgUrl'];
                 return Card(
                   child: Stack(
-                    alignment: Alignment.center,
+                    alignment: Alignment.bottomCenter,
                     children: [
                       Image.network(
                         imgUrl,
-                        width: double.infinity,
+                        width: 200,
                         height: 200,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fitWidth,
                       ),
                       Container(
                         width: double.infinity,
                         height: 200,
-                        color: Colors.black.withOpacity(0.5),
+                        color: const Color.fromARGB(255, 130, 28, 28)
+                            .withOpacity(0.2),
                       ),
-                      Text(
-                        category,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 36,
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) =>
+                                    Subpage(imgUrl: imgUrl, a: index)),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size.zero,
+                          alignment: Alignment.center,
+                          backgroundColor: Colors.transparent,
+                        ),
+                        child: Text(
+                          category,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
                         ),
                       ),
                     ],
@@ -115,7 +126,6 @@ class TeamShot extends StatelessWidget {
             ),
           ),
         ],
->>>>>>> f68667981a0a52173e50315b031c91046fe4c7ea
       ),
     );
   }

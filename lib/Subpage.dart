@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:team_introduction/main.dart';
+
+List<String> name = ["남궁현", "김민우", "이성진", "이동규", "이현서"];
+List<String> major = ["전공", "전공", "비전공", "비전공", "비전공"];
 
 class Subpage extends StatelessWidget {
-  const Subpage({Key? key}) : super(key: key);
+  final String imgUrl;
+  final int a;
+  const Subpage({Key? key, required this.imgUrl, required this.a})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,26 +22,14 @@ class Subpage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(
                   bottom: 20, left: 125, right: 125, top: 20),
-              child: Image.network("https://i.ibb.co/4JYHHtc/Moonfall.jpg"),
+              child: Image.network(imgUrl),
             ),
-            TextField(
-                decoration: (InputDecoration(
-                    hintText: "", labelText: "이름: ", prefixText: ""))),
-            TextField(
-                decoration: (InputDecoration(
-                    hintText: "", labelText: "전공 유무: ", prefixText: ""))),
-            TextField(
-                decoration: (InputDecoration(
-                    hintText: "", labelText: "개발관련 경험: ", prefixText: ""))),
-            TextField(
-                decoration: (InputDecoration(
-                    hintText: "", labelText: "MBTI: ", prefixText: ""))),
-            TextField(
-                decoration: (InputDecoration(
-                    hintText: "", labelText: "취미: ", prefixText: ""))),
-            TextField(
-                decoration: (InputDecoration(
-                    hintText: "", labelText: "목표: ", prefixText: "")))
+            Text("${name[a]}"),
+            Text("${major[a]}"),
+            Text("${name[a]}"),
+            Text("${major[a]}"),
+            Text("${name[a]}"),
+            Text("${major[a]}"),
           ],
         ),
       ),
