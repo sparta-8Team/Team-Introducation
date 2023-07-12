@@ -101,7 +101,8 @@ class TeamShot extends StatelessWidget {
                       Container(
                         width: double.infinity,
                         height: 200,
-                        color: Colors.black.withOpacity(0.2),
+                        color: const Color.fromARGB(255, 130, 28, 28)
+                            .withOpacity(0.2),
                       ),
                       TextButton(
                         onPressed: () {
