@@ -78,7 +78,17 @@ class _SubpageState extends State<Subpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("멤버들을 소개합니다."),
+        backgroundColor: Colors.white,
+        elevation: 24.0,
+        title: Container(
+          alignment: Alignment.center,
+          child: Text(
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+              "${name[_currentIndex]}${(_currentIndex == 0 || _currentIndex == 2) ? "을" : "를"} 소개합니다."),
+        ),
         actions: [
           ((_currentIndex == 0)
               ? IconButton(
@@ -87,14 +97,18 @@ class _SubpageState extends State<Subpage> {
                   icon: Icon(Icons.arrow_left),
                 )
               : IconButton(
-                  onPressed: _decrementIndex, icon: Icon(Icons.arrow_left))),
+                  color: Colors.black,
+                  onPressed: _decrementIndex,
+                  icon: Icon(Icons.arrow_left))),
           ((_currentIndex == 4)
               ? IconButton(
                   color: Colors.transparent,
                   onPressed: () {},
                   icon: Icon(Icons.arrow_right))
               : IconButton(
-                  onPressed: _incrementIndex, icon: Icon(Icons.arrow_right)))
+                  color: Colors.black,
+                  onPressed: _incrementIndex,
+                  icon: Icon(Icons.arrow_right)))
         ],
       ),
       body: SingleChildScrollView(
@@ -106,7 +120,9 @@ class _SubpageState extends State<Subpage> {
               child: Container(
                   width: 300, // 원하는 가로 크기 설정
                   height: 300, // 원하는 세로 크기 설정
-                  child: Image.network(image[_currentIndex])),
+                  child: Image.network(
+                    image[_currentIndex],
+                  )),
             ),
             Container(
                 margin: EdgeInsets.only(top: 4, bottom: 4, left: 8, right: 8),
@@ -133,10 +149,12 @@ class _SubpageState extends State<Subpage> {
                         ), // Container 부터 여기까지는 경계선을 주기위해 설정함
                         child: Text(
                           " 이름 ",
-                          style: TextStyle(fontSize: 22),
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),
                         )),
                     Expanded(
                         child: Text(
+                            style: TextStyle(fontWeight: FontWeight.bold),
                             "${name[_currentIndex]}")), // Expanded로 감싸주지 않으면 1줄로만 표기되어 텍스트가 화면을 벗어나는 오류가 나게된다.
                   ],
                 )),
@@ -245,7 +263,6 @@ class _SubpageState extends State<Subpage> {
                   borderRadius: BorderRadius.all(Radius.circular(4.0)),
                 ),
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                         alignment: Alignment.center,
@@ -276,7 +293,6 @@ class _SubpageState extends State<Subpage> {
                   borderRadius: BorderRadius.all(Radius.circular(4.0)),
                 ),
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                         alignment: Alignment.center,
