@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:team_introduction/Subpage.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'main_service.dart';
+import 'colors_service.dart';
 
-void main() {
-  runApp(MyApp());
+late SharedPreferences prefs;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  prefs = await SharedPreferences.getInstance();
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => TeamService()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,77 +31,87 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class TeamShot extends StatelessWidget {
-  const TeamShot({Key? key}) : super(key: key);
+class TeamShot extends StatefulWidget {
+  const TeamShot({super.key});
 
   @override
+  State<TeamShot> createState() => _TeamShotState();
+}
+
+class _TeamShotState extends State<TeamShot> {
+  @override
   Widget build(BuildContext context) {
-    // 테스트 이미지 데이터
-    List<Map<String, dynamic>> dataList = [
-      {
-        "test": "test1",
-        "imgUrl":
-            "https://github.com/sparta-8Team/Team-Introducation/assets/101164731/5b6a14fd-e090-461c-899a-063800fe950f",
-      },
-    ];
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 15,
-        centerTitle: true,
-        backgroundColor: Colors.red,
-        title: Text(
-          "1명 없어서 슬프조를 소개합니다",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.add),
-          )
-        ],
-      ),
-      body: Column(
-        children: [
-          Divider(height: 1),
-          Expanded(
-            child: ListView.builder(
-              itemCount: dataList.length,
-              itemBuilder: (context, index) {
-                String category = dataList[index]['test'];
-                String imgUrl = dataList[index]['imgUrl'];
-                return Card(
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Image.network(
-                        imgUrl,
-                        width: double.infinity,
-                        height: 200,
-                        fit: BoxFit.cover,
-                      ),
-                      Container(
-                        width: double.infinity,
-                        height: 200,
-                        color: Colors.black.withOpacity(0.5),
-                      ),
-                      Text(
-                        category,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 36,
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              },
+    return Consumer<TeamService>(builder: (context, teamService, child) {
+      List<Team> teamList = teamService.teamList;
+      return Scaffold(
+        appBar: AppBar(
+          backgroundColor: AppColors.TS_P_AB_bg,
+          centerTitle: true,
+          title: Text(
+            "'1명 없어서 슬프조'를 소개합니다",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 20,
             ),
           ),
-        ],
-      ),
-    );
+          actions: [],
+        ),
+        body: Column(
+          children: [
+            Divider(height: 1),
+            Expanded(
+              child: ListView.builder(
+                itemCount: teamList.length,
+                itemBuilder: (context, index) {
+                  Team team = teamList[index];
+                  return Card(
+                    child: Stack(
+                      alignment: Alignment.bottomCenter,
+                      children: [
+                        Image.network(
+                          team.image,
+                          width: 200,
+                          height: 200,
+                          //fit: BoxFit.fitWidth,
+                        ),
+                        Container(
+                          width: double.infinity,
+                          height: 200,
+                          // color: const Color.fromARGB(255, 130, 28, 28)
+                          //  .withOpacity(0.2),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => Subpage(
+                                      imgUrl: teamList[index].image, a: index)),
+                            );
+                          },
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                            minimumSize: Size.zero,
+                            alignment: Alignment.center,
+                            backgroundColor: AppColors.TS_P_B_bg,
+                          ),
+                          child: Text(
+                            team.name,
+                            style: TextStyle(
+                              color: AppColors.TS_P_B_C_LV_TS,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      );
+    });
   }
 }
