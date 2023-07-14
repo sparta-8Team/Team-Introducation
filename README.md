@@ -6,15 +6,7 @@
 
 ![image](https://github.com/sparta-8Team/Team-Introducation/assets/94061061/cfad243e-c73f-49fe-993e-7aadb2834661)
 
-<href>
-<p align="center">
-<b>:computer: Stack </br></br>
-<img alt="Kotlin" src="https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white"/>&nbsp
-<img alt="Java" src="https://img.shields.io/badge/java-%23ED8B00.svg?&style=for-the-badge&logo=java&logoColor=white"/>&nbsp
-<img alt="Android Studio" src="[https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white](https://user-images.githubusercontent.com/94061061/253563766-cfad243e-c73f-49fe-993e-7aadb2834661.png)"/>&nbsp
 
-
-</p>
 
 
 ## 기술 스택
