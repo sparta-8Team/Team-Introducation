@@ -4,6 +4,7 @@
 * flutter를 이용한 팀원 소개 앱 제작
 * 
 
+![image](https://github.com/sparta-8Team/Team-Introducation/assets/94061061/cfad243e-c73f-49fe-993e-7aadb2834661)
 
 <href>
 <p align="center">
