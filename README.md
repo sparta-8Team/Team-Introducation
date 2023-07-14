@@ -6,10 +6,8 @@
 
 
 
-
 <p align="center">
-<b>:computer: Stack </br></br>
-<img src="https://github.com/sparta-8Team/Team-Introducation/assets/94061061/cfad243e-c73f-49fe-993e-7aadb2834661"/>
+<img src="https://github.com/sparta-8Team/Team-Introducation/assets/94061061/cfad243e-c73f-49fe-993e-7aadb2834661" width="250" height="500"/>
 
 
 
