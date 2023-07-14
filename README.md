@@ -2,7 +2,8 @@
 
 * 스파르타 부트 캠프 1주 차 팀 프로젝트
 * flutter를 이용한 팀원 소개 앱 제작
-
+* 
+https://user-images.githubusercontent.com/94061061/253563766-cfad243e-c73f-49fe-993e-7aadb2834661.png
 
 ## 기술 스택
 
