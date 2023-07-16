@@ -11,8 +11,7 @@
 </p>
 
 <p align="center">
-<img src="![2023-07-16 12_00_52-NVIDIA GeForce Overlay DT](https://github.com/sparta-8Team/Team-Introducation/assets/94061061/1f02ec48-a473-4e2a-9da7-90288edff154)
-" width="250" height="500"/>
+<img src="https://github.com/sparta-8Team/Team-Introducation/assets/94061061/1f02ec48-a473-4e2a-9da7-90288edff154" width="250" height="500"/>
 </p>
 
 
