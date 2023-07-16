@@ -8,7 +8,6 @@
 
 <p align="center">
 <img src="https://github.com/sparta-8Team/Team-Introducation/assets/94061061/cfad243e-c73f-49fe-993e-7aadb2834661" width="250" height="500"/>
-</p>
 
 <p align="center">
 <img src="https://github.com/sparta-8Team/Team-Introducation/assets/94061061/1f02ec48-a473-4e2a-9da7-90288edff154" width="250" height="500"/>
