@@ -14,6 +14,11 @@
 <img src="https://github.com/sparta-8Team/Team-Introducation/assets/94061061/1f02ec48-a473-4e2a-9da7-90288edff154" width="250" height="500"/>
 </p>
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/94061061/253783024-53557bec-d7ed-4c8c-adce-2152257a54d2.png" width="250" height="500"/>
+</p>
+
+
 
 
 
